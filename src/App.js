@@ -30,12 +30,12 @@ function App() {
   }, [photoDate, errMsg]);
 
   const handleChange = event => {
-    console.log(event.target.value);
+    console.log(event.target.value); // this is the value coming from the date picker input
     setPhotoDate(event.target.value);
   };
 
-  let { date, explanation, title, url } = photoOfTheDay;
-  console.log(photoDate);
+  let { date, explanation, title, url } = photoOfTheDay; // deconstruct photoOfTheDay state object
+  if (errMsg !== "") return <h1 style={{ textAlign: "center" }}>{errMsg}</h1>;
   return (
     <div className="App">
       <input type="date" onChange={handleChange} />
